@@ -1,32 +1,27 @@
 package com.example.recyclerview;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.recyclerview.databinding.ActivityMainBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import android.view.Menu;
-import android.view.MenuItem;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
     private final LinkedList mWordList = new LinkedList<String>();
     private RecyclerView mRecyclerView;
     private WordListAdapter mAdapter;
+    private ArrayList<RecipeData> recipeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +42,46 @@ public class MainActivity extends AppCompatActivity {
                 mRecyclerView.getAdapter().notifyItemInserted(wordListSize);
                 mRecyclerView.smoothScrollToPosition(wordListSize);
             }
-        });
 
+        });
+        setRecipeList();
         mRecyclerView = findViewById(R.id.recyclerview);
         mAdapter = new WordListAdapter(this, mWordList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecipeListAdapter recipeListAdapter = new RecipeListAdapter(MainActivity.this, recipeList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        mRecyclerView.setAdapter(recipeListAdapter);
+        recipeListAdapter.setOnItemClickListener(onItemClickListener);
+    }
+    private void setRecipeList() {
+        recipeList = new ArrayList<>();
+        RecipeData data;
+        data = new RecipeData(getString(R.string.jenis1), getString(R.string.merk1), R.drawable.gambar1, getString(R.string.cc1));
+        recipeList.add(data);
+        data = new RecipeData(getString(R.string.jenis2), getString(R.string.merk2 ), R.drawable.gambar2, getString(R.string.cc2));
+        recipeList.add(data);
+        data = new RecipeData(getString(R.string.jenis3), getString(R.string.merk3 ), R.drawable.gambar3, getString(R.string.cc3));
+        recipeList.add(data);
+    }
+    public void openDetailActivity(int imageId, String details){
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        intent.putExtra("image", imageId);
+        intent.putExtra("details", details);
+        startActivity(intent);
     }
 
+    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) v.getTag();
+            int position = viewHolder.getAdapterPosition();
+            RecipeData thisRecipe = recipeList.get(position);
+            openDetailActivity(thisRecipe.getImage(), thisRecipe.getDetails());
+        }
+    };
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

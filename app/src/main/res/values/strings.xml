@@ -9,4 +9,34 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="jenis1">Aerox</string>
+    <string name="merk1">Yamaha</string>
+    <string name="cc1"><b>125</b>
+        \n
+        Untuk segmen pertama ini, pertama kali Mas Sena akan mengajak Bro dan Sis untuk membedah desain eksterior dari spesifikasi Yamaha Aerox 125LC ini.
+Jika dilihat secara mendetail pada bagian desain eksteriornya, nuansa sporty khas motor balap Yamaha bakal Bro dan Sis temukan pada Aerox.
+Seperti yang sudah Mas Sena sempat sampaikan tadi, bahwa Aerox ini bisa dibilang memiliki desain body ‘mix and match’ antara Yamaha GT 125 Eagle Eye dan Yamaha X-Ride.
+Dari fascia depan, nampak Yamaha Aerox 125LC memiliki karakter lampu utama tajam nan futuristik, khas GT 125.
+Garis desain headlamp Aerox memiliki konsep runcing dengan paduan lampu berjenis LED. Nuansa desain depan Aerox benar-benar kental bernuansa racing.
+    </string>
+    <string name="jenis2">AeroxOld</string>
+    <string name="merk2">Yamaha</string>
+    <string name="cc2"><b>155</b>
+    \n1/2
+        Spesifikasi mesinnya yang sama dengan Yamaha NMAX rupanya membuat Yamaha Aerox 155 VVA ini masih kalah dengan motor premium NMAX yang jauh lebih laris.
+Di mana, mesinnya yang berkapasitas 155 cc memang membuatnya dapat menghasilkan tenaga yang terbilang cukup powerfull.
+Tentu hal ini menjadi sebuah hal yang patut dipertimbangkan bagi para calon konsumen Yamaha Aerox 155 VVA tersebut.
+Sebagai motor matik kelas menengah, Yamaha Aerox 155 VVA ini memang membawa spesifikasi mumpuni dan fitur canggih serta tampilan sporty.
+Bahkan, dengan pembaruan pada tampilan luarnya yang dilakukan pada akhir tahun 2017 ini, membuat aura sporty dan segar semakin terlihat jelas. Hal ini tentu akan semakin memikat hati para calon konsumen Yamaha Aerox 155 VVA tersebut.
+</string>
+    <string name="jenis3">AeroxNew</string>
+    <string name="merk3">Yamaha</string>
+    <string name="cc3"><b>155</b>
+\n3
+        Mesin All New Aerox 155 Connected juga dilengkapi dengan Smart Motor Generator (SMG). Jadi, saat distarter, suara mesin lebih halus. Ada pula fitur Stop and Start System (SSS) khusus tipe ABS yang berfungsi mengurangi konsumsi bahan bakar yang tidak perlu saat motor sedang berhenti.
+Pada bagian kaki-kaki, motor ini dilengkapi dengan Sub Tank Suspension (khusus tipe ABS) untuk peredaman yang lebih optimal serta ban tubeless bertapak lebar untuk rasa berkendara yang lebih stabil.
+Baca artikel detikoto, "Yamaha Aerox 155 Connected: Spesifikasi, Fitur dan Harga" selengkapnya https://oto.detik.com/motor/d-5237751/yamaha-aerox-155-connected-spesifikasi-fitur-dan-ha
+</string>
+    <string name="recipe_image_desc">recipe image</string>
 </resources>
